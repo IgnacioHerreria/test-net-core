@@ -1,0 +1,20 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/WebSiberian/
+/Entidades/bin
+/Entidades/obj
+/AccesoDatos/obj
+/AccesoDatos/bin
+/WebSiberian/obj
+/WebSiberian/bin
+/WebSiberian/*.dll
+/packages
+*.user
+*.txt
+/WebSiberian/.vs
+/WebSiberian/*.cache
+.config
+/NDependOut
+Entidades/obj/project.nuget.cache
