@@ -1,0 +1,29 @@
+
+    public class LogConfiguration : IEntityTypeConfiguration<Table>
+    {
+
+        public void ConfigureTB(EntityTypeBuilder<Table> builder)
+        {
+            builder.Property(p => p.field_class).HasColumnName("column_table").IsRequired();
+            builder.ToTable("table").HasNoKey();
+        }
+    }
+    
+    --Context
+    --opc1
+        protected override void OnModelCreating(ModelBuilder modelBuilder) 
+        {
+         ConfigureTB(modelBuilder);
+        }
+        
+--opc2
+protected override void OnModelCreating(ModelBuilder modelBuilder) 
+       {
+modelBuilder.ApplyConfiguration(new Configuracion.CpnFrontLogConfiguracion());
+}
+
+ public static void FrontLog(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Table>().Property(p => p.field_class).HasColumnName("column_table").IsRequired().HasMaxLength(50);
+            modelBuilder.Entity<Table>().ToTable("TableDB").HasNoKey();
+        }
